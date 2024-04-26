@@ -63,10 +63,10 @@ public class Cuenta_Bancaria {
     public void imprimir(){
 
         System.out.println("Nombre del titular: " + nombre_titular);
-        System.out.println("Apellido del titular" + apellido_titular);
+        System.out.println("Apellido del titular: " + apellido_titular);
         System.out.println("Numero cuenta: " + numero_cuenta);
         System.out.println("Tipo de cuenta: " + tipo_cuenta);
-        System.out.println("Saldo: " + saldo_cuenta);
+        System.out.println("Saldo: " + saldo_cuenta + "\n");
     }
 
     public static void main(String[] args) {
@@ -83,7 +83,7 @@ public class Cuenta_Bancaria {
         int opcion;
 
         do{
-            System.out.println("Seleccione la operacion que desea realizar \n 1. Consultar saldo \n 2. Consignar \n 3. Retirar \n 4. Salir");
+            System.out.println("Seleccione la operacion que desea realizar \n 1. Consultar saldo \n 2. Consignar \n 3. Retirar \n 4. Consultar Datos de Cuenta \n 5. Salir");
             opcion = cuenta.nextInt();
 
             switch (opcion) {
@@ -171,14 +171,39 @@ public class Cuenta_Bancaria {
                     }
                 
                     break;
-                
+
                 case 4:
+                    
+                    System.out.println("Ingrese el numero de cuenta para retirar");
+                    int numero_imprimir = cuenta.nextInt();
+
+                    boolean cuenta_encontrada_imprimir = false;
+
+                    for(int i = 0; i < cuentas.length; i++){
+                        
+                        if(cuentas[i].getNumeroCuenta() == numero_imprimir){
+                            cuentas[i].imprimir();
+
+                            cuenta_encontrada_imprimir = true;
+                            break;
+                        }
+                    }
+
+                    if(!cuenta_encontrada_imprimir) {
+                        System.out.println("El número de cuenta ingresado no corresponde a ninguna cuenta registrada" + "\n");
+                    }
+                
+                    break;
+                
+                case 5:
                 System.out.println("¡Hasta la proxima!");
+
+                break;
     
                 default:
                     System.out.println("El numero ingresado es incorrecto" + "\n");
             }
-        }while(opcion != 4);
+        }while(opcion != 5);
 
     cuenta.close();
 
