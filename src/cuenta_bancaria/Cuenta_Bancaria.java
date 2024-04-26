@@ -174,7 +174,7 @@ public class Cuenta_Bancaria {
 
                 case 4:
                     
-                    System.out.println("Ingrese el numero de cuenta para retirar");
+                    System.out.println("Ingrese el numero de cuenta para consultar");
                     int numero_imprimir = cuenta.nextInt();
 
                     boolean cuenta_encontrada_imprimir = false;
