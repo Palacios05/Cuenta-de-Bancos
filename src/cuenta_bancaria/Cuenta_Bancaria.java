@@ -151,7 +151,7 @@ public class Cuenta_Bancaria {
 
                         if(cuentas[i].getNumeroCuenta() == numero_retirar){
                             
-                            if(cuentas[i].getSaldoCuenta() >= monto_retirar && monto_retirar > 0 && (cuentas[i].getSaldoCuenta()) - monto_retirar >= 0){
+                            if(cuentas[i].getSaldoCuenta() >= monto_retirar && monto_retirar > 0 && (cuentas[i].getSaldoCuenta() - monto_retirar) >= 0){
                                 
                                 cuentas[i].setSaldoCuenta(cuentas[i].getSaldoCuenta() - monto_retirar);
 
@@ -181,6 +181,6 @@ public class Cuenta_Bancaria {
         }while(opcion != 4);
 
     cuenta.close();
-    
+
     }
 }
