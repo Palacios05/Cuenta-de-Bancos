@@ -179,7 +179,8 @@ public class Cuenta_Bancaria {
                     System.out.println("El numero ingresado es incorrecto" + "\n");
             }
         }while(opcion != 4);
-        
-    }
+
+    cuenta.close();
     
+    }
 }
